@@ -11,5 +11,4 @@ add_library(DoorPlugin SHARED DoorPlugin.cc)
 target_link_libraries(DoorPlugin ${GAZEBO_LIBRARIES} ${Boost_LIBRARIES})
 
 # Install the library
-set_target_properties(DoorPlugin PROPERTIES SOVERSION ${PROJECT_MAJOR_VERSION} VERSION ${PROJECT_VERSION_FULL})
 install (TARGETS DoorPlugin DESTINATION ${CMAKE_INSTALL_PREFIX}/lib COMPONENT shlib)

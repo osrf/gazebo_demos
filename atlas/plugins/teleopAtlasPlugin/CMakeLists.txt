@@ -17,5 +17,4 @@ target_link_libraries(TeleopAtlasPlugin
 )
 
 # Install the library
-set_target_properties(TeleopAtlasPlugin PROPERTIES SOVERSION ${PROJECT_MAJOR_VERSION} VERSION ${PROJECT_VERSION_FULL})
 install (TARGETS TeleopAtlasPlugin DESTINATION ${CMAKE_INSTALL_PREFIX}/lib COMPONENT shlib)

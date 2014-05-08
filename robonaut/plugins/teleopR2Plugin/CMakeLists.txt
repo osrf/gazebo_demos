@@ -17,5 +17,4 @@ target_link_libraries(TeleopR2Plugin
 )
 
 # Install the library
-set_target_properties(TeleopR2Plugin PROPERTIES SOVERSION ${PROJECT_MAJOR_VERSION} VERSION ${PROJECT_VERSION_FULL})
 install (TARGETS TeleopR2Plugin DESTINATION ${CMAKE_INSTALL_PREFIX}/lib COMPONENT shlib)
