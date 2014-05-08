@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ -f @CMAKE_INSTALL_PREFIX@/share/gazebo_demos/bin/gui.ini.robonaut ]
+then
+  cp @CMAKE_INSTALL_PREFIX@/share/gazebo_demos/bin/gui.ini.robonaut $HOME/.gazebo/gui.ini
+fi
+
+gazebo r2_demo.world

@@ -1,0 +1,20 @@
+cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
+
+project (gazebo_demos)
+
+string (TOLOWER ${PROJECT_NAME} PROJECT_NAME_LOWER)
+string (TOUPPER ${PROJECT_NAME} PROJECT_NAME_UPPER)
+
+set (PROJECT_MAJOR_VERSION 0)
+set (PROJECT_MINOR_VERSION 1)
+set (PROJECT_PATCH_VERSION 0)
+
+set (PROJECT_VERSION ${PROJECT_MAJOR_VERSION}.${PROJECT_MINOR_VERSION})
+set (PROJECT_VERSION_FULL ${PROJECT_MAJOR_VERSION}.${PROJECT_MINOR_VERSION}.${PROJECT_PATCH_VERSION})
+
+message (STATUS "${PROJECT_NAME} version ${PROJECT_VERSION_FULL}")
+
+add_subdirectory(atlas)
+add_subdirectory(robonaut)
+add_subdirectory(plugins)
+add_subdirectory(cmake)

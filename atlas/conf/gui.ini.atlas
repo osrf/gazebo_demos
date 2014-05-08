@@ -1,0 +1,4 @@
+[oculus]
+x=1600
+y=0
+visual=atlas::pelvis::head_visual

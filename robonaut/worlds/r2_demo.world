@@ -1,0 +1,162 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <world name="default">
+    <scene>
+      <ambient>0.1 0.1 0.1 1.0</ambient>
+      <background>0.1 0.1 0.1 1</background>
+      <grid>false</grid>
+      <sky>
+        <time>16</time>
+        <sunrise>12</sunrise>
+        <sunset>12</sunset>
+      </sky>
+    </scene>
+    <physics type="ode">
+      <gravity>0 0 0</gravity>
+    </physics>
+
+    <!--A global light source -->
+    <light type="directional" name="sun">
+      <cast_shadows>true</cast_shadows>
+
+      <pose>-30 10 6000 0 0 0</pose>
+      <diffuse>1.0 0.9 0.8 1</diffuse>
+      <specular>0.8 0.8 0.8 1</specular>
+
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.1</linear>
+        <quadratic>0.01</quadratic>
+      </attenuation>
+
+      <direction>0.8 0.2 -0.7</direction>
+    </light>
+
+    <!-- Robonaut -->
+    <include>
+      <!--<static>true</static>-->
+      <pose>0.0 0.7 0 0.0 0.0 1.57</pose>
+      <uri>model://robonaut_hydra</uri>
+    </include>
+
+    <!-- The International Space Station -->
+    <include>
+      <uri>model://iss</uri>
+    </include>
+
+    <!-- A taskboard for playing around -->
+    <include>
+      <pose>0 0.1 0 0 0 0</pose>
+      <uri>model://taskboard_demo</uri>
+    </include>
+
+    <!-- A wrench to be rescued from the open space -->
+    <include>
+      <pose>6.15 0.55 1.15 0 1.57 0</pose>
+      <uri>model://monkey_wrench_demo</uri>
+    </include>
+
+     <!-- A drill inside the iss -->
+    <include>
+      <pose>0.92 0.91 1.15 0 0 0</pose>
+      <uri>model://cordless_drill</uri>
+    </include>
+
+  <model name="iss_door_A">
+    <static>true</static>
+    <pose>2.64 0.5 1.21 0 -1.57 0</pose>
+    <link name='door_link'>
+      <collision name='door_collision'>
+        <geometry>
+          <cylinder>
+            <radius>0.945017</radius>
+            <length>0.189003</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name='door_visual'>
+        <geometry>
+          <cylinder>
+            <radius>0.945017</radius>
+            <length>0.189003</length>
+          </cylinder>
+        </geometry>
+
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+
+  <model name="iss_door_B">
+    <static>true</static>
+    <pose>-5.80 0.5 1.21 0 -1.57 0</pose>
+    <link name='door_link'>
+      <collision name='door_collision'>
+        <geometry>
+          <cylinder>
+            <radius>0.945017</radius>
+            <length>0.189003</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name='door_visual'>
+        <geometry>
+          <cylinder>
+            <radius>0.945017</radius>
+            <length>0.189003</length>
+          </cylinder>
+        </geometry>
+
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+
+  <!-- Enable Hydra support -->
+  <plugin filename="libHydraPlugin.so" name="hydra_plugin"></plugin>
+
+  <model name="dolly">
+    <static>false</static>
+    <pose>0 0.7 2 0 0 0</pose>
+    <link name="link">
+      <gravity>false</gravity>
+      <!--<collision name="collision">
+        <geometry>
+          <box><size>1 1 0.1</size></box>
+        </geometry>
+      </collision>-->
+    <!--<visual name="visual">
+      <geometry>
+        <box><size>.2 .2 0.2</size></box>
+      </geometry>
+    </visual>-->
+    </link>
+    <joint name="world_joint" type="revolute">
+      <parent>world</parent>
+      <child>link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit>
+      </axis>
+    </joint>
+  </model>
+
+  <!-- Plugin for opening the door of the ISS when the switch is pressed. -->
+  <plugin filename="libDoorPlugin.so" name="iss_door_plugin"></plugin>
+
+  </world>
+</sdf>

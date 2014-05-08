@@ -1,0 +1,5 @@
+add_subdirectory(bin)
+add_subdirectory(conf)
+add_subdirectory(models)
+add_subdirectory(plugins)
+add_subdirectory(worlds)

@@ -1,0 +1,2 @@
+add_subdirectory(doorPlugin)
+add_subdirectory(teleopR2Plugin)

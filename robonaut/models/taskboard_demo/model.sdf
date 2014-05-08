@@ -1,0 +1,2069 @@
+<sdf version='1.4'>
+  <model name='taskboard_demo'>
+    <link name='dummy'>
+      <pose>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.0858742 -0.47463 1.29445 0 -0 0</pose>
+        <mass>121</mass>
+        <inertia>
+          <ixx>27.1735</ixx>
+          <ixy>0.0344621</ixy>
+          <ixz>-0.2727</ixz>
+          <iyy>32.6038</iyy>
+          <iyz>0.614482</iyz>
+          <izz>30.8894</izz>
+        </inertia>
+      </inertial>
+      <collision name='dummy_collision_taskboard_lower'>
+        <pose>0.02 -0.48 1.3 1.57 4.33681e-19 3.14</pose>
+        <geometry>
+          <mesh>
+            <uri>model://taskboard_demo/meshes/tskbd_lower_assembly_robonaut.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='dummy_collision_taskboard_lower_labels'>
+        <pose>0.02 -0.48 1.3 1.57 4.33681e-19 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>0 0 0</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_lower_assembly_labels.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='dummy_collision_taskboard_slot1'>
+        <pose>0.382 -0.480577 1.3 1.57 4.33681e-19 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot1.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='dummy_collision_taskboard_slot1_blackplate'>
+        <pose>0.382 -0.480577 1.3 1.57 4.33681e-19 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot1_blackplate.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='dummy_collision_taskboard_slot1_guard'>
+        <pose>0.345017 -0.469616 1.42401 1.57 4.33681e-19 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot1_guard.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='dummy_collision_taskboard_slot1_labels'>
+        <pose>0.382 -0.480577 1.3 1.57 4.33681e-19 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot1_labels.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='dummy_collision_taskboard_slot1_panel'>
+        <pose>0.382 -0.480577 1.3 1.57 4.33681e-19 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot1_panel.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='dummy_collision_taskboard_slot2'>
+        <pose>0.141 -0.480193 1.3 1.57 4.33681e-19 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot2.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='dummy_collision_taskboard_slot2_B01_Base'>
+        <pose>0.198 -0.480359 1.395 1.57 4.33681e-19 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot2_b01_base.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='dummy_collision_taskboard_slot2_B02_Base'>
+        <pose>0.0839998 -0.480178 1.395 1.57 4.33681e-19 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>0 0 0</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot2_b02_base.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='dummy_collision_taskboard_slot2_B03_Base'>
+        <pose>0.1981 -0.480284 1.3 1.57 4.33681e-19 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>0 0 0</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot2_b03_base.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='dummy_collision_taskboard_slot2_B04_Base'>
+        <pose>0.0839999 -0.480102 1.3 1.57 4.33681e-19 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot2_b04_base.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='dummy_collision_taskboard_slot2_B04_Cap'>
+        <pose>0.0840315 -0.460302 1.30002 1.57 4.33681e-19 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot2_b04_cap.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='dummy_collision_taskboard_slot2_B05_Base'>
+        <pose>0.198001 -0.479408 1.2047 1.57 4.33681e-19 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot2_b05_base.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='dummy_collision_taskboard_slot2_B06_Base'>
+        <pose>0.084 -0.480026 1.205 1.57 4.33681e-19 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot2_b06_base.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='dummy_collision_taskboard_slot2_labels1'>
+        <pose>0.141008 -0.475193 1.3 1.57 4.33681e-19 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot2_labels1.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='dummy_collision_taskboard_slot2_labels2'>
+        <pose>0.141 -0.480194 1.302 1.57 4.33681e-19 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot2_labels2.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='dummy_collision_taskboard_slot2_panel'>
+        <pose>0.141 -0.480193 1.3 1.57 4.33681e-19 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot1_panel.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='dummy_collision_taskboard_slot3'>
+        <pose>-0.101 -0.479807 1.3 1.57 4.33681e-19 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_eva_slot3.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='dummy_collision_taskboard_slot3_labels'>
+        <pose>-0.101 -0.479807 1.3 1.57 4.33681e-19 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_eva_slot3_labels.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='dummy_collision_taskboard_slot3_panel'>
+        <pose>-0.101 -0.479807 1.3 1.57 4.33681e-19 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot1_panel.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='dummy_collision_taskboard_slot4'>
+        <pose>-0.342 -0.479423 1.3 1.57 4.33681e-19 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot4.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='dummy_collision_taskboard_slot4_labels'>
+        <pose>-0.342 -0.479423 1.3 1.57 4.33681e-19 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot4_labels.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='dummy_collision_taskboard_slot4_panel'>
+        <pose>-0.342 -0.479423 1.3 1.57 4.33681e-19 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot4_panel.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='dummy_visual_taskboard_lower'>
+        <pose>0.02 -0.48 1.3 1.57 4.33681e-19 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_lower_assembly_robonaut.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='dummy_visual_taskboard_lower_labels'>
+        <pose>0.02 -0.48 1.3 1.57 4.33681e-19 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_lower_assembly_labels.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='dummy_visual_taskboard_slot1'>
+        <pose>0.382 -0.480577 1.3 1.57 4.33681e-19 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot1.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='dummy_visual_taskboard_slot1_blackplate'>
+        <pose>0.382 -0.480577 1.3 1.57 4.33681e-19 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot1_blackplate.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='dummy_visual_taskboard_slot1_guard'>
+        <pose>0.345017 -0.469616 1.42401 1.57 4.33681e-19 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot1_guard.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='dummy_visual_taskboard_slot1_labels'>
+        <pose>0.382 -0.480577 1.3 1.57 4.33681e-19 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot1_labels.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='dummy_visual_taskboard_slot1_panel'>
+        <pose>0.382 -0.480577 1.3 1.57 4.33681e-19 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot1_panel.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='dummy_visual_taskboard_slot2'>
+        <pose>0.141 -0.480193 1.3 1.57 4.33681e-19 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot2.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='dummy_visual_taskboard_slot2_B01_Base'>
+        <pose>0.198 -0.480359 1.395 1.57 4.33681e-19 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot2_b01_base.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='dummy_visual_taskboard_slot2_B02_Base'>
+        <pose>0.0839998 -0.480178 1.395 1.57 4.33681e-19 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot2_b02_base.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='dummy_visual_taskboard_slot2_B03_Base'>
+        <pose>0.1981 -0.480284 1.3 1.57 4.33681e-19 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot2_b03_base.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='dummy_visual_taskboard_slot2_B04_Base'>
+        <pose>0.0839999 -0.480102 1.3 1.57 4.33681e-19 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot2_b04_base.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='dummy_visual_taskboard_slot2_B04_Cap'>
+        <pose>0.0840315 -0.460302 1.30002 1.57 4.33681e-19 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot2_b04_cap.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='dummy_visual_taskboard_slot2_B05_Base'>
+        <pose>0.198001 -0.479408 1.2047 1.57 4.33681e-19 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot2_b05_base.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='dummy_visual_taskboard_slot2_B06_Base'>
+        <pose>0.084 -0.480026 1.205 1.57 4.33681e-19 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot2_b06_base.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='dummy_visual_taskboard_slot2_labels1'>
+        <pose>0.141008 -0.475193 1.3 1.57 4.33681e-19 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot2_labels1.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='dummy_visual_taskboard_slot2_labels2'>
+        <pose>0.141 -0.480194 1.302 1.57 4.33681e-19 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot2_labels2.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='dummy_visual_taskboard_slot2_panel'>
+        <pose>0.141 -0.480193 1.3 1.57 4.33681e-19 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot1_panel.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='dummy_visual_taskboard_slot3'>
+        <pose>-0.101 -0.479807 1.3 1.57 4.33681e-19 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_eva_slot3.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='dummy_visual_taskboard_slot3_labels'>
+        <pose>-0.101 -0.479807 1.3 1.57 4.33681e-19 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_eva_slot3_labels.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='dummy_visual_taskboard_slot3_panel'>
+        <pose>-0.101 -0.479807 1.3 1.57 4.33681e-19 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot1_panel.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='dummy_visual_taskboard_slot4'>
+        <pose>-0.342 -0.479423 1.3 1.57 4.33681e-19 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot4.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='dummy_visual_taskboard_slot4_labels'>
+        <pose>-0.342 -0.479423 1.3 1.57 4.33681e-19 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot4_labels.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='dummy_visual_taskboard_slot4_panel'>
+        <pose>-0.342 -0.479423 1.3 1.57 4.33681e-19 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot4_panel.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='world/dummy' type='revolute'>
+      <child>dummy</child>
+      <parent>world</parent>
+      <axis>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+        </dynamics>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+    <link name='taskboard_slot1_A1'>
+      <pose>0.382 -0.480577 1.3 1.57 4.33681e-19 3.14</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='taskboard_slot1_A1_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot1_a1.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='taskboard_slot1_A1_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot1_a1.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='taskboard_lower/taskboard_slot1_A1' type='prismatic'>
+      <child>taskboard_slot1_A1</child>
+      <parent>dummy</parent>
+      <axis>
+        <xyz>0.00159265 0.999998 0.000796327</xyz>
+        <limit>
+          <lower>-0.0005</lower>
+          <upper>0.001</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='taskboard_slot1_A2'>
+      <pose>0.382 -0.480577 1.3 1.57 4.33681e-19 3.14</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='taskboard_slot1_A2_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot1_a2.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='taskboard_slot1_A2_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot1_a2.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='taskboard_lower/taskboard_slot1_A2' type='prismatic'>
+      <child>taskboard_slot1_A2</child>
+      <parent>dummy</parent>
+      <axis>
+        <xyz>0.00159265 0.999998 0.000796327</xyz>
+        <limit>
+          <lower>-0.0005</lower>
+          <upper>0.001</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='taskboard_slot1_A3'>
+      <pose>0.382 -0.480577 1.3 1.57 4.33681e-19 3.14</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='taskboard_slot1_A3_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot1_a3.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='taskboard_slot1_A3_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot1_a3.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='taskboard_lower/taskboard_slot1_A3' type='prismatic'>
+      <child>taskboard_slot1_A3</child>
+      <parent>dummy</parent>
+      <axis>
+        <xyz>0.00159265 0.999998 0.000796327</xyz>
+        <limit>
+          <lower>-0.0005</lower>
+          <upper>0.001</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='taskboard_slot1_B1'>
+      <pose>0.382 -0.480577 1.3 1.57 4.33681e-19 3.14</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='taskboard_slot1_B1_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot1_b1.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='taskboard_slot1_B1_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot1_b1.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='taskboard_lower/taskboard_slot1_B1' type='prismatic'>
+      <child>taskboard_slot1_B1</child>
+      <parent>dummy</parent>
+      <axis>
+        <xyz>0.00159265 0.999998 0.000796327</xyz>
+        <limit>
+          <lower>-0.0005</lower>
+          <upper>0.001</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='taskboard_slot1_B2'>
+      <pose>0.382 -0.480577 1.3 1.57 4.33681e-19 3.14</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='taskboard_slot1_B2_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot1_b2.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='taskboard_slot1_B2_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot1_b2.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='taskboard_lower/taskboard_slot1_B2' type='prismatic'>
+      <child>taskboard_slot1_B2</child>
+      <parent>dummy</parent>
+      <axis>
+        <xyz>0.00159265 0.999998 0.000796327</xyz>
+        <limit>
+          <lower>-0.0005</lower>
+          <upper>0.001</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='taskboard_slot1_B3'>
+      <pose>0.382 -0.480577 1.3 1.57 4.33681e-19 3.14</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='taskboard_slot1_B3_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot1_b3.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='taskboard_slot1_B3_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot1_b3.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='taskboard_lower/taskboard_slot1_B3' type='prismatic'>
+      <child>taskboard_slot1_B3</child>
+      <parent>dummy</parent>
+      <axis>
+        <xyz>0.00159265 0.999998 0.000796327</xyz>
+        <limit>
+          <lower>-0.0005</lower>
+          <upper>0.001</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='taskboard_slot1_C1'>
+      <pose>0.382 -0.480577 1.3 1.57 4.33681e-19 3.14</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='taskboard_slot1_C1_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot1_c1.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='taskboard_slot1_C1_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot1_c1.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='taskboard_lower/taskboard_slot1_C1' type='prismatic'>
+      <child>taskboard_slot1_C1</child>
+      <parent>dummy</parent>
+      <axis>
+        <xyz>0.00159265 0.999998 0.000796327</xyz>
+        <limit>
+          <lower>-0.0005</lower>
+          <upper>0.001</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='taskboard_slot1_C2'>
+      <pose>0.382 -0.480577 1.3 1.57 4.33681e-19 3.14</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='taskboard_slot1_C2_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot1_c2.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='taskboard_slot1_C2_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot1_c2.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='taskboard_lower/taskboard_slot1_C2' type='prismatic'>
+      <child>taskboard_slot1_C2</child>
+      <parent>dummy</parent>
+      <axis>
+        <xyz>0.00159265 0.999998 0.000796327</xyz>
+        <limit>
+          <lower>-0.0005</lower>
+          <upper>0.001</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='taskboard_slot1_C3'>
+      <pose>0.382 -0.480577 1.3 1.57 4.33681e-19 3.14</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='taskboard_slot1_C3_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot1_c3.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='taskboard_slot1_C3_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot1_c3.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='taskboard_lower/taskboard_slot1_C3' type='prismatic'>
+      <child>taskboard_slot1_C3</child>
+      <parent>dummy</parent>
+      <axis>
+        <xyz>0.00159265 0.999998 0.000796327</xyz>
+        <limit>
+          <lower>-0.0005</lower>
+          <upper>0.001</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='taskboard_slot1_switch'>
+      <pose>0.332017 -0.469505 1.31001 1.57 4.33681e-19 3.14</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='taskboard_slot1_switch_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot1_switch.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='taskboard_slot1_switch_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot1_switch.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='taskboard_lower/taskboard_slot1_switch' type='revolute'>
+      <child>taskboard_slot1_switch</child>
+      <parent>dummy</parent>
+      <axis>
+        <xyz>-0.999999 0.00159265 -2.1684e-19</xyz>
+        <limit>
+          <lower>-0.5</lower>
+          <upper>0.5</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='taskboard_slot1_switch1'>
+      <pose>0.345007 -0.475606 1.411 1.989 -0 3.14</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='taskboard_slot1_switch1_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot1_switch1.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='taskboard_slot1_switch1_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot1_switch1.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='taskboard_lower/taskboard_slot1_switch1' type='revolute'>
+      <child>taskboard_slot1_switch1</child>
+      <parent>dummy</parent>
+      <axis>
+        <xyz>-0.999999 0.00159265 -1.0842e-19</xyz>
+        <limit>
+          <lower>-0.84</lower>
+          <upper>0</upper>
+          <effort>1e+07</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='taskboard_slot1_switch1_cover'>
+      <pose>0.345017 -0.469616 1.42401 1.57 4.33681e-19 3.14</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='taskboard_slot1_switch1_cover_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot1_switch1_cover.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='taskboard_slot1_switch1_cover_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot1_switch1_cover.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+        <material>
+          <script>
+            <name>Gazebo/Red</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='taskboard_lower/taskboard_slot1_switch1_cover' type='revolute'>
+      <child>taskboard_slot1_switch1_cover</child>
+      <parent>dummy</parent>
+      <axis>
+        <xyz>-0.999999 0.00159265 -2.1684e-19</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>0</upper>
+          <effort>1e+07</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='taskboard_slot1_switch2_pullout'>
+      <pose>0.445514 -0.471607 1.21101 2.04 3.25261e-19 3.14</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='taskboard_lower/taskboard_slot1_switch2' type='revolute'>
+      <child>taskboard_slot1_switch2_pullout</child>
+      <parent>dummy</parent>
+      <axis>
+        <xyz>-0.999999 0.00159265 -2.1684e-19</xyz>
+        <limit>
+          <lower>-0.94</lower>
+          <upper>0</upper>
+          <effort>1e+07</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='taskboard_slot1_switch2'>
+      <pose>0.445514 -0.471607 1.21101 2.04 3.25261e-19 3.14</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='taskboard_slot1_switch2_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot1_switch2.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='taskboard_slot1_switch2_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot1_switch2.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='taskboard_lower/taskboard_slot1_switch2_pullout' type='prismatic'>
+      <child>taskboard_slot1_switch2</child>
+      <parent>taskboard_slot1_switch2_pullout</parent>
+      <axis>
+        <xyz>0.00142053 0.891928 -0.452176</xyz>
+        <limit>
+          <lower>-0.002</lower>
+          <upper>0</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='taskboard_slot1_switch3_pullout'>
+      <pose>0.381514 -0.471505 1.21101 2.04 3.25261e-19 3.14</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.05</iyy>
+          <iyz>0</iyz>
+          <izz>0.05</izz>
+        </inertia>
+      </inertial>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='taskboard_lower/taskboard_slot1_switch3' type='revolute'>
+      <child>taskboard_slot1_switch3_pullout</child>
+      <parent>dummy</parent>
+      <axis>
+        <xyz>-0.999999 0.00159265 -2.1684e-19</xyz>
+        <limit>
+          <lower>-0.94</lower>
+          <upper>0</upper>
+          <effort>1e+07</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='taskboard_slot1_switch3'>
+      <pose>0.381514 -0.471505 1.21101 2.04 3.25261e-19 3.14</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>0.05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.05</iyy>
+          <iyz>0</iyz>
+          <izz>0.05</izz>
+        </inertia>
+      </inertial>
+      <collision name='taskboard_slot1_switch3_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot1_switch3.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='taskboard_slot1_switch3_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot1_switch3.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Red</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='taskboard_lower/taskboard_slot1_switch3_pullout' type='prismatic'>
+      <child>taskboard_slot1_switch3</child>
+      <parent>taskboard_slot1_switch3_pullout</parent>
+      <axis>
+        <xyz>0.00142053 0.891928 -0.452176</xyz>
+        <limit>
+          <lower>-0.002</lower>
+          <upper>0</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='taskboard_slot1_switch4_pullout'>
+      <pose>0.318514 -0.471405 1.21101 2.04 3.25261e-19 3.14</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='taskboard_lower/taskboard_slot1_switch4' type='revolute'>
+      <child>taskboard_slot1_switch4_pullout</child>
+      <parent>dummy</parent>
+      <axis>
+        <xyz>-0.999999 0.00159265 -2.1684e-19</xyz>
+        <limit>
+          <lower>-0.94</lower>
+          <upper>0</upper>
+          <effort>1e+07</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='taskboard_slot1_switch4'>
+      <pose>0.318514 -0.471405 1.21101 2.04 3.25261e-19 3.14</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='taskboard_slot1_switch4_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot1_switch4.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='taskboard_slot1_switch4_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot1_switch4.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='taskboard_lower/taskboard_slot1_switch4_pullout' type='prismatic'>
+      <child>taskboard_slot1_switch4</child>
+      <parent>taskboard_slot1_switch4_pullout</parent>
+      <axis>
+        <xyz>0.00142053 0.891928 -0.452176</xyz>
+        <limit>
+          <lower>-0.002</lower>
+          <upper>0</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='taskboard_slot2_B02_Revolute'>
+      <pose>0.0840173 -0.469178 1.39501 1.57 4.33681e-19 3.14</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='taskboard_lower/taskboard_slot2_B02_Revolute' type='revolute'>
+      <child>taskboard_slot2_B02_Revolute</child>
+      <parent>dummy</parent>
+      <axis>
+        <xyz>0.00159265 0.999998 0.000796327</xyz>
+        <limit>
+          <lower>-3.14</lower>
+          <upper>3.14</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='taskboard_slot2_B02'>
+      <pose>0.0840173 -0.469178 1.39501 1.57 4.33681e-19 3.14</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>5</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='taskboard_slot2_B02_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot2_b02.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='taskboard_slot2_B02_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot2_b02.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='taskboard_lower/taskboard_slot2_B02' type='revolute'>
+      <child>taskboard_slot2_B02</child>
+      <parent>taskboard_slot2_B02_Revolute</parent>
+      <axis>
+        <xyz>-1.26827e-06 -0.000796326 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.57</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='taskboard_slot2_B03_Prismatic'>
+      <pose>0.198142 -0.453584 1.30002 1.57 4.33681e-19 3.14</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='taskboard_slot2_B03_Base/taskboard_slot2_B03_Prismatic' type='prismatic'>
+      <child>taskboard_slot2_B03_Prismatic</child>
+      <parent>dummy</parent>
+      <axis>
+        <xyz>0.00159265 0.999998 0.000796327</xyz>
+        <limit>
+          <lower>-0.02</lower>
+          <upper>0</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='taskboard_slot2_B03'>
+      <pose>0.198142 -0.453584 1.30002 1.57 4.33681e-19 3.14</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.1001</mass>
+        <inertia>
+          <ixx>2</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>2</iyy>
+          <iyz>0</iyz>
+          <izz>2</izz>
+        </inertia>
+      </inertial>
+      <collision name='taskboard_slot2_B03_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot2_b03.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='taskboard_slot2_B03_collision_taskboard_slot2_B03_Strip'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0 0 0</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot2_b03_strip.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='taskboard_slot2_B03_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot2_b03.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='taskboard_slot2_B03_visual_taskboard_slot2_B03_Strip'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot2_b03_strip.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='taskboard_slot2_B03_Prismatic/taskboard_slot2_B03' type='revolute'>
+      <child>taskboard_slot2_B03</child>
+      <parent>taskboard_slot2_B03_Prismatic</parent>
+      <axis>
+        <xyz>0.00159265 0.999998 0.000796327</xyz>
+        <limit>
+          <lower>-3.14</lower>
+          <upper>3.14</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='taskboard_slot2_B04'>
+      <pose>0.0840315 -0.460302 1.30002 1.57 4.33681e-19 3.14</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>5</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='taskboard_slot2_B04_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot2_b04.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='taskboard_slot2_B04_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot2_b04.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='taskboard_lower/taskboard_slot2_B04' type='revolute'>
+      <child>taskboard_slot2_B04</child>
+      <parent>dummy</parent>
+      <axis>
+        <xyz>0.00159265 0.999998 0.000796327</xyz>
+        <limit>
+          <lower>-3.14</lower>
+          <upper>3.14</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='taskboard_slot2_B06'>
+      <pose>0.0840231 -0.465526 1.20501 1.57 4.33681e-19 3.14</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>5</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='taskboard_slot2_B06_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot2_b06.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='taskboard_slot2_B06_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://taskboard_demo/meshes/tskbd_panel_assembly_slot2_b06.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='taskboard_lower/taskboard_slot2_B06' type='revolute'>
+      <child>taskboard_slot2_B06</child>
+      <parent>dummy</parent>
+      <axis>
+        <xyz>0.00159265 0.999998 0.000796327</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>0</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <!--<plugin name='gazebo_taskboard' filename='libgazebo_taskboard.so'/>
+    <plugin name='gazebo_interface' filename='libgazebo_interface.so'>
+      <paramsNamespace>r2_sim_params</paramsNamespace>
+      <jointCommandsTopic>joint_commands</jointCommandsTopic>
+      <jointStatesTopic>joint_states</jointStatesTopic>
+      <jointStatesRate>20.0</jointStatesRate>
+      <advancedMode>false</advancedMode>
+      <jointControlTopic>joint_control</jointControlTopic>
+      <jointStatusTopic>joint_status</jointStatusTopic>
+      <jointStatusRate>5.0</jointStatusRate>
+    </plugin>
+    <static>0</static>
+    <plugin name='panel_a_interface' filename='libgazebo_taskboard.so'/> -->
+  </model>
+</sdf>

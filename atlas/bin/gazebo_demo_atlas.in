@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ -f @CMAKE_INSTALL_PREFIX@/share/gazebo_demos/bin/gui.ini.atlas ]
+then
+  cp @CMAKE_INSTALL_PREFIX@/share/gazebo_demos/bin/gui.ini.atlas $HOME/.gazebo/gui.ini
+fi
+
+gazebo drc_demo.world
