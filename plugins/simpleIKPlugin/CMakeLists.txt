@@ -4,11 +4,11 @@ find_package(Boost REQUIRED COMPONENTS system)
 include_directories(${Boost_INCLUDE_DIRS})
 link_directories(${Boost_LIBRARY_DIRS})
 
-find_package(Eigen REQUIRED COMPONENTS system)
+find_package(Eigen3 REQUIRED COMPONENTS system)
 include_directories(SYSTEM ${Eigen_INCLUDE_DIRS})
 link_directories(${Eigen_LIBRARY_DIRS})
 
-find_package(orocos_kdl REQUIRED COMPONENTS system)
+find_package(orocos-kdl REQUIRED COMPONENTS system)
 include_directories(SYSTEM ${orocos_kdl_INCLUDE_DIRS})
 link_directories(${orocos_kdl_LIBRARY_DIRS})
 

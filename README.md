@@ -1,7 +1,20 @@
 Prerequisites
 ==
 
-$ sudo apt-get install ros-hydro-orocos-kdl
+$ sudo apt-get install libeigen3-dev
+
+$ cd /tmp
+
+$ git clone http://git.mech.kuleuven.be/robotics/orocos_kinematics_dynamics.git
+
+$ cd /tmp/orocos_kinematics_dynamics/orocos-kdl
+
+$ mkdir build; cd build
+
+$ cmake ../ -DCMAKE_INSTALL_PREFIX=/usr; make 
+
+$ sudo make install
+
 
 Compilation
 ==
