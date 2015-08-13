@@ -133,7 +133,7 @@ void TeleopAtlasPlugin::Load(physics::ModelPtr _parent, sdf::ElementPtr _sdf)
 
   this->node = transport::NodePtr(new transport::Node());
   this->node->Init(this->world->GetName());
-  this->hydraSub = this->node->Subscribe("~/hydra",
+  this->hydraSub = this->node->Subscribe("~/hydra0",
       &TeleopAtlasPlugin::OnHydra, this);
 
   this->worldControlPub =

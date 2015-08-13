@@ -1,8 +1,14 @@
 #!/bin/bash
 
-if [ -f @CMAKE_INSTALL_PREFIX@/share/gazebo_demos/bin/gui.ini.atlas ]
+if [ -f @CMAKE_INSTALL_PREFIX@/share/gazebo_demos/gui.ini.atlas ]
 then
-  cp @CMAKE_INSTALL_PREFIX@/share/gazebo_demos/bin/gui.ini.atlas $HOME/.gazebo/gui.ini
+  cp @CMAKE_INSTALL_PREFIX@/share/gazebo_demos/gui.ini.atlas $HOME/.gazebo/gui.ini
+fi
+
+if ! [ "$(pidof oculusd)" ] 
+then
+  # Starting oculusd
+  /home/osrf/oculus/oculussdk/oculusd&
 fi
 
 gazebo drc_demo.world
