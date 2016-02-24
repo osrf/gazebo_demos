@@ -8,7 +8,7 @@ fi
 if ! [ "$(pidof oculusd)" ] 
 then
   # Starting oculusd
-  /home/osrf/oculus/oculussdk/oculusd&
+  /home/osrf/oculussdk/oculusd&
 fi
 
 gazebo drc_demo.world

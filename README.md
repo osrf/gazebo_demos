@@ -5,7 +5,7 @@ $ sudo apt-get install libeigen3-dev
 
 $ cd /tmp
 
-$ git clone http://git.mech.kuleuven.be/robotics/orocos_kinematics_dynamics.git
+$ git clone http://github.com/orocos/orocos_kinematics_dynamics.git
 
 $ cd /tmp/orocos_kinematics_dynamics/orocos-kdl
 
