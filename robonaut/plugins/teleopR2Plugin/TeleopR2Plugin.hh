@@ -71,20 +71,20 @@ namespace gazebo
 
     private: physics::JointControllerPtr jointController;
 
-    private: math::Vector3 goalPos;
+    private: ignition::math::Vector3d goalPos;
 
     private: bool rightBumper, leftBumper;
 
     private: physics::LinkPtr rightModel, leftModel;
 
-    private: math::Pose rightStartPose;
-    private: math::Pose leftStartPose;
+    private: ignition::math::Pose3d rightStartPose;
+    private: ignition::math::Pose3d leftStartPose;
 
-    private: math::Pose basePoseRight;
-    private: math::Pose basePoseLeft;
-    private: math::Pose resetPoseRight;
-    private: math::Pose resetPoseLeft;
-    private: math::Pose modelStartPose;
+    private: ignition::math::Pose3d basePoseRight;
+    private: ignition::math::Pose3d basePoseLeft;
+    private: ignition::math::Pose3d resetPoseRight;
+    private: ignition::math::Pose3d resetPoseLeft;
+    private: ignition::math::Pose3d modelStartPose;
 
     private: bool activated;
     private: physics::LinkPtr pinLink;
@@ -94,10 +94,10 @@ namespace gazebo
 
     private: common::PID xPosPID, yPosPID, zPosPID;
     private: common::PID rollPID, pitchPID, yawPID;
-    private: math::Pose pelvisTarget, pelvisStartPose;
-    private: math::Pose prevModelPose;
+    private: ignition::math::Pose3d pelvisTarget, pelvisStartPose;
+    private: ignition::math::Pose3d prevModelPose;
 
-    private: math::Pose dollyStartPose;
+    private: ignition::math::Pose3d dollyStartPose;
     private: double yaw;
     private: common::Time prevTime;
 

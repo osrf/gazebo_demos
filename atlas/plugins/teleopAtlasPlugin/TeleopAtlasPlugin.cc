@@ -122,14 +122,15 @@ void TeleopAtlasPlugin::Load(physics::ModelPtr _parent, sdf::ElementPtr _sdf)
   if (!this->leftModel)
     gzerr << "Unable to get left arm goal link\n";
 
-  math::Quaternion modelRot = this->model->GetWorldPose().rot;
+  ignition::math::Quaterniond modelRot =
+    this->model->GetWorldPose().Ign().Rot();
 
-  this->basePoseRight = this->rightModel->GetRelativePose();
-  this->basePoseLeft = this->leftModel->GetRelativePose();
+  this->basePoseRight = this->rightModel->GetRelativePose().Ign();
+  this->basePoseLeft = this->leftModel->GetRelativePose().Ign();
 
   this->rightStartPose = this->basePoseRight;
   this->leftStartPose = this->basePoseLeft;
-  this->modelStartPose = this->model->GetWorldPose();
+  this->modelStartPose = this->model->GetWorldPose().Ign();
 
   this->node = transport::NodePtr(new transport::Node());
   this->node->Init(this->world->GetName());
@@ -150,7 +151,7 @@ void TeleopAtlasPlugin::Load(physics::ModelPtr _parent, sdf::ElementPtr _sdf)
     std::string pinLinkStr =_sdf->Get<std::string>("pin_link");
 
     this->dolly = this->world->GetModel(pinModelStr);
-    this->dollyStartPose = this->dolly->GetWorldPose();
+    this->dollyStartPose = this->dolly->GetWorldPose().Ign();
 
     if (!this->dolly)
       gzerr << "Unable to get pin model[" << pinModelStr << "]\n";
@@ -168,7 +169,7 @@ void TeleopAtlasPlugin::Load(physics::ModelPtr _parent, sdf::ElementPtr _sdf)
   this->pinJoint->SetModel(this->model);
 
   this->pinJoint->Load(this->pinLink, this->model->GetLink("pelvis"),
-      math::Pose());
+      ignition::math::Pose3d());
   this->pinJoint->SetUpperLimit(0,0);
   this->pinJoint->SetLowerLimit(0,0);
   this->pinJoint->Init();
@@ -242,8 +243,8 @@ void TeleopAtlasPlugin::Update(const common::UpdateInfo & /*_info*/)
       if ((*iter)->right().button_bumper() && (*iter)->left().button_bumper())
       {
         this->activated = true;
-        this->resetPoseRight = msgs::Convert((*iter)->right().pose());
-        this->resetPoseLeft = msgs::Convert((*iter)->left().pose());
+        this->resetPoseRight = msgs::ConvertIgn((*iter)->right().pose());
+        this->resetPoseLeft = msgs::ConvertIgn((*iter)->left().pose());
         break;
       }
     }
@@ -253,23 +254,25 @@ void TeleopAtlasPlugin::Update(const common::UpdateInfo & /*_info*/)
   {
     boost::shared_ptr<msgs::Hydra const> msg = this->hydraMsgs.back();
 
-    math::Pose rightPose;
-    math::Pose leftPose;
+    ignition::math::Pose3d rightPose;
+    ignition::math::Pose3d leftPose;
 
-    math::Pose rightAdjust, leftAdjust;
+    ignition::math::Pose3d rightAdjust, leftAdjust;
 
-    rightPose = msgs::Convert(msg->right().pose());
-    leftPose = msgs::Convert(msg->left().pose());
+    rightPose = msgs::ConvertIgn(msg->right().pose());
+    leftPose = msgs::ConvertIgn(msg->left().pose());
 
-    rightAdjust = math::Pose(rightPose.pos - this->resetPoseRight.pos +
-        this->basePoseRight.pos,
-        rightPose.rot * this->resetPoseRight.rot.GetInverse() *
-        this->basePoseRight.rot);
+    rightAdjust = ignition::math::Pose3d(
+      rightPose.Pos() - this->resetPoseRight.Pos() +
+        this->basePoseRight.Pos(),
+        rightPose.Rot() * this->resetPoseRight.Rot().Inverse() *
+        this->basePoseRight.Rot());
 
-    leftAdjust = math::Pose(leftPose.pos - this->resetPoseLeft.pos +
-        this->basePoseLeft.pos,
-        leftPose.rot * this->resetPoseLeft.rot.GetInverse() *
-        this->basePoseLeft.rot);
+    leftAdjust = ignition::math::Pose3d(leftPose.Pos() - 
+      this->resetPoseLeft.Pos() +
+        this->basePoseLeft.Pos(),
+        leftPose.Rot() * this->resetPoseLeft.Rot().Inverse() *
+        this->basePoseLeft.Rot());
 
     this->SetRightFingers(msg->right().trigger()*1.5707);
     this->SetLeftFingers(msg->left().trigger()*1.5707);
@@ -283,15 +286,19 @@ void TeleopAtlasPlugin::Update(const common::UpdateInfo & /*_info*/)
     this->yaw += msg->left().joy_y() * -.5 * dt;
     double dx = rx * cos(this->yaw) + ry*sin(this->yaw*-1);
     double dy = rx * sin(this->yaw) + ry*cos(this->yaw*-1);
-    math::Pose dPose(dx, dy, 0, 0, 0, msg->left().joy_y() * -.5 * dt);
+    ignition::math::Pose3d dPose(
+      dx, dy, 0, 0, 0, msg->left().joy_y() * -.5 * dt);
 
-    math::Vector3 rpy = this->dolly->GetWorldPose().rot.GetAsEuler();
-    rpy.z = yaw;
+    ignition::math::Vector3d rpy =
+      this->dolly->GetWorldPose().Ign().Rot().Euler();
+    rpy.Z(yaw);
 
     this->dollyPinJoint->Detach();
-    math::Vector3 dollyPos = this->dolly->GetWorldPose().pos + dPose.pos;
-    dollyPos.z = this->dollyStartPose.pos.z;
-    this->dolly->SetWorldPose(math::Pose(dollyPos, math::Quaternion(rpy)));
+    ignition::math::Vector3d dollyPos =
+      this->dolly->GetWorldPose().Ign().Pos() + dPose.Pos();
+    dollyPos.Z(this->dollyStartPose.Pos().Z());
+    this->dolly->SetWorldPose(
+      ignition::math::Pose3d(dollyPos, ignition::math::Quaterniond(rpy)));
 
     this->dollyPinJoint->Attach(physics::LinkPtr(),
         this->dolly->GetLink("link"));

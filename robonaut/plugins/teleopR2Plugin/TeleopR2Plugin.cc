@@ -172,14 +172,15 @@ void TeleopR2Plugin::Load(physics::ModelPtr _parent, sdf::ElementPtr _sdf)
   if (!this->leftModel)
     gzerr << "Unable to get left arm goal link\n";
 
-  math::Quaternion modelRot = this->model->GetWorldPose().rot;
+  ignition::math::Quaterniond modelRot =
+    this->model->GetWorldPose().Ign().Rot();
 
-  this->basePoseRight = this->rightModel->GetRelativePose();
-  this->basePoseLeft = this->leftModel->GetRelativePose();
+  this->basePoseRight = this->rightModel->GetRelativePose().Ign();
+  this->basePoseLeft = this->leftModel->GetRelativePose().Ign();
 
   this->rightStartPose = this->basePoseRight;
   this->leftStartPose = this->basePoseLeft;
-  this->modelStartPose = this->model->GetWorldPose();
+  this->modelStartPose = this->model->GetWorldPose().Ign();
 
   this->node = transport::NodePtr(new transport::Node());
   this->node->Init(this->world->GetName());
@@ -200,7 +201,7 @@ void TeleopR2Plugin::Load(physics::ModelPtr _parent, sdf::ElementPtr _sdf)
     std::string pinLinkStr =_sdf->Get<std::string>("pin_link");
 
     this->dolly = this->world->GetModel(pinModelStr);
-    this->dollyStartPose = this->dolly->GetWorldPose();
+    this->dollyStartPose = this->dolly->GetWorldPose().Ign();
 
     if (!this->dolly)
       gzerr << "Unable to get pin model[" << pinModelStr << "]\n";
@@ -218,7 +219,7 @@ void TeleopR2Plugin::Load(physics::ModelPtr _parent, sdf::ElementPtr _sdf)
   this->pinJoint->SetModel(this->model);
 
   this->pinJoint->Load(this->pinLink, this->model->GetLink("base"),
-      math::Pose());
+      ignition::math::Pose3d());
   this->pinJoint->SetUpperLimit(0,0);
   this->pinJoint->SetLowerLimit(0,0);
   this->pinJoint->Init();
@@ -319,8 +320,8 @@ void TeleopR2Plugin::Update(const common::UpdateInfo & /*_info*/)
       if ((*iter)->right().button_bumper() && (*iter)->left().button_bumper())
       {
         this->activated = true;
-        this->resetPoseRight = msgs::Convert((*iter)->right().pose());
-        this->resetPoseLeft = msgs::Convert((*iter)->left().pose());
+        this->resetPoseRight = msgs::ConvertIgn((*iter)->right().pose());
+        this->resetPoseLeft = msgs::ConvertIgn((*iter)->left().pose());
         break;
       }
     }
@@ -330,22 +331,23 @@ void TeleopR2Plugin::Update(const common::UpdateInfo & /*_info*/)
   {
     boost::shared_ptr<msgs::Hydra const> msg = this->hydraMsgs.back();
 
-    math::Pose rightPose;
-    math::Pose leftPose;
+    ignition::math::Pose3d rightPose;
+    ignition::math::Pose3d leftPose;
 
-    math::Pose rightAdjust, leftAdjust;
+    ignition::math::Pose3d rightAdjust, leftAdjust;
 
-    rightPose = msgs::Convert(msg->right().pose());
-    leftPose = msgs::Convert(msg->left().pose());
+    rightPose = msgs::ConvertIgn(msg->right().pose());
+    leftPose = msgs::ConvertIgn(msg->left().pose());
 
 
 
-    rightAdjust = math::Pose(this->modelStartPose.GetInverse().rot *
-        (rightPose.pos - this->resetPoseRight.pos) +
-        this->basePoseRight.pos,
-        this->modelStartPose.GetInverse().rot *
-        rightPose.rot * this->resetPoseRight.rot.GetInverse() *
-        this->basePoseRight.rot);
+    rightAdjust = ignition::math::Pose3d(
+      this->modelStartPose.Inverse().Rot() *
+        (rightPose.Pos() - this->resetPoseRight.Pos()) +
+        this->basePoseRight.Pos(),
+        this->modelStartPose.Inverse().Rot() *
+        rightPose.Rot() * this->resetPoseRight.Rot().Inverse() *
+        this->basePoseRight.Rot());
 
    /*std::cerr << " ----- " << std::endl;
    std::cerr << " right pose " << rightPose.pos << std::endl;
@@ -361,12 +363,12 @@ void TeleopR2Plugin::Update(const common::UpdateInfo & /*_info*/)
 
    // gzerr << " right adjust " << this->model->GetRelativePose().rot.GetAsEuler() << std::endl;
 
-    leftAdjust = math::Pose(this->modelStartPose.GetInverse().rot *
-        (leftPose.pos - this->resetPoseLeft.pos) +
-        this->basePoseLeft.pos,
-        this->modelStartPose.GetInverse().rot *
-        leftPose.rot * this->resetPoseLeft.rot.GetInverse() *
-        this->basePoseLeft.rot);
+    leftAdjust = ignition::math::Pose3d(this->modelStartPose.Inverse().Rot() *
+        (leftPose.Pos() - this->resetPoseLeft.Pos()) +
+        this->basePoseLeft.Pos(),
+        this->modelStartPose.Inverse().Rot() *
+        leftPose.Rot() * this->resetPoseLeft.Rot().Inverse() *
+        this->basePoseLeft.Rot());
 
     //rightAdjust.pos = this->model->GetRelativePose().rot*rightAdjust.pos;
     //leftAdjust.pos = this->model->GetRelativePose().rot*leftAdjust.pos;
@@ -383,18 +385,22 @@ void TeleopR2Plugin::Update(const common::UpdateInfo & /*_info*/)
     this->yaw += msg->left().joy_y() * -.5 * dt;
     double dx = rx * cos(this->yaw) + ry*sin(this->yaw*-1);
     double dy = rx * sin(this->yaw) + ry*cos(this->yaw*-1);
-    math::Pose dPose(dx, dy, 0, 0, 0, msg->left().joy_y() * -.5 * dt);
+    ignition::math::Pose3d dPose(
+      dx, dy, 0, 0, 0, msg->left().joy_y() * -.5 * dt);
 
-    math::Vector3 rpy = this->dolly->GetWorldPose().rot.GetAsEuler();
-    rpy.z = yaw;
-    rpy.x = this->dollyStartPose.rot.x;
-    rpy.y = this->dollyStartPose.rot.y;
+    ignition::math::Vector3d rpy =
+      this->dolly->GetWorldPose().Ign().Rot().Euler();
+    rpy.Z(yaw);
+    rpy.X(this->dollyStartPose.Rot().X());
+    rpy.Y(this->dollyStartPose.Rot().Y());
     //std::cerr << " rpy x y " << rpy.x << " " << rpy.y << std::endl;
 
     this->dollyPinJoint->Detach();
-    math::Vector3 dollyPos = this->dolly->GetWorldPose().pos + dPose.pos;
-    dollyPos.z = this->dollyStartPose.pos.z;
-    this->dolly->SetWorldPose(math::Pose(dollyPos, math::Quaternion(rpy)));
+    ignition::math::Vector3d dollyPos =
+      this->dolly->GetWorldPose().Ign().Pos() + dPose.Pos();
+    dollyPos.Z(this->dollyStartPose.Pos().Z());
+    this->dolly->SetWorldPose(
+      ignition::math::Pose3d(dollyPos, ignition::math::Quaterniond(rpy)));
 
     this->dollyPinJoint->Attach(physics::LinkPtr(),
         this->dolly->GetLink("link"));
