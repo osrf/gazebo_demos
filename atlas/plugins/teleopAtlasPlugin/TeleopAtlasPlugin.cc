@@ -263,13 +263,13 @@ void TeleopAtlasPlugin::Update(const common::UpdateInfo & /*_info*/)
     leftPose = msgs::ConvertIgn(msg->left().pose());
 
     rightAdjust = ignition::math::Pose3d(
-      rightPose.Pos() - this->resetPoseRight.Pos() +
+      (rightPose.Pos() - this->resetPoseRight.Pos()) * 1.5 +
         this->basePoseRight.Pos(),
         rightPose.Rot() * this->resetPoseRight.Rot().Inverse() *
         this->basePoseRight.Rot());
 
-    leftAdjust = ignition::math::Pose3d(leftPose.Pos() -
-      this->resetPoseLeft.Pos() +
+    leftAdjust = ignition::math::Pose3d((leftPose.Pos() -
+      this->resetPoseLeft.Pos()) * 1.5 +
         this->basePoseLeft.Pos(),
         leftPose.Rot() * this->resetPoseLeft.Rot().Inverse() *
         this->basePoseLeft.Rot());

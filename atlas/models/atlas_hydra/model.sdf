@@ -5645,7 +5645,7 @@
 
     <link name="right_arm_goal_link">
       <gravity>false</gravity>
-      <pose>0.013 -.294 -0.422 1.5707 0 3.1415</pose>
+      <pose>0.013 -.294 -0.322 1.5707 0 3.1415</pose>
       <!--
       <visual name="visual">
         <geometry>
@@ -5657,11 +5657,11 @@
 
     <link name="left_arm_goal_link">
       <gravity>false</gravity>
-      <pose>0.013 .294 -0.422 -1.5707 0 -3.1415</pose>
-<!--
+      <pose>0.013 .294 -0.322 -1.5707 0 -3.1415</pose>
+      <!--
       <visual name="visual">
         <geometry>
-          <box><size>.2 .2 0.2</size></box>
+          <box><size>.1 .1 0.1</size></box>
         </geometry>
       </visual>
 -->
