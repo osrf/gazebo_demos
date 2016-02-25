@@ -1,6 +1,14 @@
 <?xml version="1.0" ?>
 <sdf version="1.4">
   <world name="default">
+    <scene>
+      <sky>
+        <clouds>
+          <speed>12</speed>
+        </clouds>
+      </sky>
+    </scene>
+
     <gui>
       <camera name="user_camera">
         <pose>-2 -2 2 0 .3 0.4</pose>
@@ -357,7 +365,7 @@
 
     <model name="dolly">
       <static>false</static>
-      <pose>0 0 2 0 0 0</pose>
+      <pose>0 0 4 0 0 0</pose>
       <link name="link">
         <gravity>false</gravity>
         <collision name="collision">

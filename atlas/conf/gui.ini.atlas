@@ -1,9 +1,9 @@
 [geometry]
-x=1600
+x=0
 y=0
 
 [oculus]
-x=0
+x=1920
 y=0
 visual=atlas::pelvis::head_visual
 autolaunch=1

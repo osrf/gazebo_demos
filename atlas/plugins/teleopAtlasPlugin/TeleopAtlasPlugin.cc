@@ -134,7 +134,7 @@ void TeleopAtlasPlugin::Load(physics::ModelPtr _parent, sdf::ElementPtr _sdf)
 
   this->node = transport::NodePtr(new transport::Node());
   this->node->Init(this->world->GetName());
-  this->hydraSub = this->node->Subscribe("~/hydra0",
+  this->hydraSub = this->node->Subscribe("~/hydra",
       &TeleopAtlasPlugin::OnHydra, this);
 
   this->worldControlPub =
@@ -268,7 +268,7 @@ void TeleopAtlasPlugin::Update(const common::UpdateInfo & /*_info*/)
         rightPose.Rot() * this->resetPoseRight.Rot().Inverse() *
         this->basePoseRight.Rot());
 
-    leftAdjust = ignition::math::Pose3d(leftPose.Pos() - 
+    leftAdjust = ignition::math::Pose3d(leftPose.Pos() -
       this->resetPoseLeft.Pos() +
         this->basePoseLeft.Pos(),
         leftPose.Rot() * this->resetPoseLeft.Rot().Inverse() *
